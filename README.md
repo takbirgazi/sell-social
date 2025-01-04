@@ -1,10 +1,10 @@
-## Sell Social
+# Sell Social
 Your Marketplace, Your Network.
 
-# Technology use
+### Technology use
 
 * Next JS
 * Typescript
 * TailwindCSS
 
-# NPM Packages
+### NPM Packages

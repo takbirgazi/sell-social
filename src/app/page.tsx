@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <h2>Hello word</h2>
+      <div className="container mx-auto">
+        <h2 className="dark:text-red-500">Social</h2>
+      </div>
       <Footer />
     </div>
   );

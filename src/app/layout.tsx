@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = Poppins({
+  subsets: ['latin'], // Use the required subset
+  weight: ['400', '700'], // Choose font weights as needed
 });
 
 export const metadata: Metadata = {
-  title: "Sell Social",
+  title: "Sell Social - Your Marketplace, Your Network",
   description: "Your Marketplace, Your Network.",
 };
 
@@ -23,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html id="mainBody" lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={poppins.className}
       >
         {children}
       </body>
