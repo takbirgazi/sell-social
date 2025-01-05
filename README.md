@@ -8,3 +8,5 @@ Your Marketplace, Your Network.
 * TailwindCSS
 
 ### NPM Packages
+
+* React Icons (For Font Icon)

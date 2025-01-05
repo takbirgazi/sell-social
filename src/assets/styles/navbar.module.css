@@ -1,0 +1,20 @@
+
+.dropdown {
+  right: 0;
+  min-width: 200px;
+  backdrop-filter: blur(10px);
+  border-radius: 0px 3px 3px 0px;
+  padding: 16px;
+  transition: all 0.5s;
+  animation: slideIn 0.5s ease-in-out;
+  overflow-x: hidden;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}   
