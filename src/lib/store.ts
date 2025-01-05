@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ThemeChangeReducer from "./features/ThemeChange/ThemeChangeSlice";
 
-const store = configureStore({
+const storeData = configureStore({
     reducer: {
-        ThemeChange: ThemeChangeReducer,
+        themeChange: ThemeChangeReducer,
     }
 })
 
-export default store;
+export default storeData;
+export type RootState = ReturnType<typeof storeData.getState>;
+export type AppDispatch = typeof storeData.dispatch;

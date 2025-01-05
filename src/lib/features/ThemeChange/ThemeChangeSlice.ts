@@ -1,11 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = () => {
+    const isDark = localStorage.getItem("isDark");
+    if (!isDark) {
+        localStorage.setItem("isDark", "true");
+        return true;
+    } else {
+        if (isDark == "true") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 const ThemeChange = createSlice({
     name: "ThemeChange",
-    initialState: 0,
+    initialState,
     reducers: {
-        changeTheme: (state) => {
-            return state + 1;
+        changeTheme: (state, action) => {
+            state = action.payload;
+            localStorage.setItem("isDark", state.toString());
+            return state;
         }
     }
 })

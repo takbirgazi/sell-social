@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { StoreProvider } from "./StoreProvider";
 const poppins = Poppins({
   subsets: ['latin'], // Use the required subset
   weight: ['400', '700'], // Choose font weights as needed
@@ -17,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html id="mainBody" lang="en">
-      <body
-      className={poppins.className}
-      >
-        {children}
+    <html lang="en">
+      <body className={poppins.className}>
+        <StoreProvider>
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );
