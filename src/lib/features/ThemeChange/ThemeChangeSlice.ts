@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = () => {
-    const isDark = localStorage.getItem("isDark");
-    if (!isDark) {
-        localStorage.setItem("isDark", "true");
-        return true;
-    } else {
-        if (isDark == "true") {
-            return true;
-        } else {
-            return false;
+    if (typeof window !== "undefined") {
+        // Only access localStorage on the client
+        const isDark = localStorage.getItem("isDark");
+        if (!isDark) {
+          localStorage.setItem("isDark", "true");
+          return true;
         }
-    }
-}
+        return isDark === "true";
+      }
+      // Default fallback for SSR
+      return true;
+    };
 
 const ThemeChange = createSlice({
     name: "ThemeChange",
@@ -20,7 +20,7 @@ const ThemeChange = createSlice({
     reducers: {
         changeTheme: (state, action) => {
             state = action.payload;
-            localStorage.setItem("isDark", state.toString());
+            localStorage.setItem("isDark", state ? "true" : "false");
             return state;
         }
     }

@@ -11,7 +11,7 @@ const Theme = () => {
     }
     return (
         <div>
-            <button onClick={handleThemeChange}>Change</button>
+            <button onClick={handleThemeChange}>{isDark ? '🌞 Light Mode' : '🌙 Dark Mode'}</button>
         </div>
     );
 };

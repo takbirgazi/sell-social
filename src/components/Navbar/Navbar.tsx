@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo2.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import Theme from '../Theme/Theme';
 
 const Navbar = () => {
     return (
@@ -14,6 +15,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <ul className='flex justify-center space-x-4'>
+                        <li><Theme /></li>
                         <li><Link href='/'>Social</Link></li>
                         <li><Link href='/'>Marketplace</Link></li>
                     </ul>
